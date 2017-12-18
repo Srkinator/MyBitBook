@@ -44,7 +44,7 @@ class VideoPost extends Component {
     render() {
         return (
             <div>
-                <input type="text" placeholder="This is a video post" onChange={this.getVideoPost} className="updateProfileForm form-control" required />
+                <input type="text" placeholder="Please enter youtube video url" onChange={this.getVideoPost} className="updateProfileForm form-control" required />
                 <input type="button" value="Post" className="updateProfileUpdateButton btn btn-info btn-lg" name="videoPost" onClick={this.createVideoPost} style={updateButtonStyle} />
                 <p>{this.state.isThereError ? `Error ${this.state.error}: Please enter the text of your post` : ""}</p>
             </div>

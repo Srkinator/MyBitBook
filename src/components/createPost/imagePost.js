@@ -69,7 +69,7 @@ class TextPost extends Component {
             <div>
                 <div className="row">
                     <div className="col-12">
-                        <input type="text" placeholder="This is an image post" rows="5" className="updateProfileForm form-control" onChange={this.getImagePost} required />
+                        <input type="text" placeholder="Please enter image url" rows="5" className="updateProfileForm form-control" onChange={this.getImagePost} required />
                         {this.state.successfulUpload ? <p>Image successfully uploaded!</p> : ""}
                     </div>
                 </div>

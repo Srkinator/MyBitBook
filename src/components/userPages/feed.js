@@ -16,31 +16,6 @@ import { POSTS_PER_PAGE } from "../../constants";
 import EnlargeImage from "../userPages/enlargeImage";
 import Search from "../common/search";
 
-const rowStyle = {
-    maxHeight: "200px"
-};
-
-// const endMsgStyle = {
-//     margin: "0 auto",
-//     position: "absolute",
-//     bottom: "0px"
-// };
-
-const videoStyle = {
-    padding: "10px",
-    border: "1px solid rgba(178,215,251,0.2)",
-    boxShadow: "-12px 11px 34px -1px rgba(44,62,80,0.34)"
-};
-
-const imgStyle = {
-    borderRadius: "50px",
-    width: "80%",
-    margin: "10px auto",
-    padding: "10px",
-    border: "1px solid rgba(178,215,251,0.2)",
-    boxShadow: "-12px 11px 34px -1px rgba(44,62,80,0.34)"
-};
-
 const modalStyle = {
     content: {
         height: "90%",
@@ -49,60 +24,6 @@ const modalStyle = {
         maxWidth: "80%",
         margin: "0 auto"
     }
-};
-
-const modalCardStyle = {
-    backgroundColor: "rgba(116, 162, 208, 0.3)",
-    padding: "30px",
-    margin: "50px 0",
-    borderRadius: "10px 10px 10px 10px",
-    position: "relative"
-};
-
-const updateButtonStyle = {
-    transition: "width 0.5s",
-    transitionTimingFunction: "linear",
-};
-
-const closeButtonStyle = {
-    transition: "width 0.5s",
-    transitionTimingFunction: "linear",
-};
-
-const dropdownStyle = {
-    width: "85%",
-    height: "95%",
-    padding: "20px",
-    margin: "10px 0 0 0",
-    textAlign: "center",
-};
-
-const cardStyle = {
-    textAlign: "center",
-    borderRadius: "2em",
-    backgroundColor: "rgba(116, 162, 208, 0.2)",
-    boxShadow: "-12px 11px 34px -1px rgba(44,62,80,0.34)",
-};
-
-const formStyle = {
-    fontWeight: "bold",
-    padding: "5px",
-    borderRadius: "5px",
-    width: "90%",
-    height: "50px",
-    textAlign: "center",
-    margin: "10px",
-    color: "rgba(255, 255, 255, 0.9)",
-};
-
-const createButtonStyle = {
-    transition: "width 0.5s",
-    transitionTimingFunction: "linear",
-    borderRadius: "35px",
-    position: "fixed",
-    bottom: "25px",
-    right: "25px",
-    height: "70px",
 };
 
 class Feed extends Component {
@@ -230,7 +151,7 @@ class Feed extends Component {
     processVideoUrl(video) {
         const videoEndPart = video.split("=")[1];
         return (
-            <iframe width="90%" height="315" style={videoStyle} src={`https://www.youtube.com/embed/${videoEndPart}`} frameBorder="0" allowFullScreen></iframe>
+            <iframe width="90%" height="550px" className="videoPost" src={`https://www.youtube.com/embed/${videoEndPart}`} frameBorder="0" allowFullScreen></iframe>
         );
     }
 
@@ -240,7 +161,7 @@ class Feed extends Component {
                 {posts.map((post) => {
                     return (
                         <div key={post.id} className="col-12 col-xl-8 offset-xl-2" style={{ paddingBottom: "20px" }}>
-                            <div style={cardStyle}>
+                            <div className="cardStyle">
                                 <Link to={`/profile/${post.userId}`} >
                                     <h2 style={{ textAlign: "center", fontSize: "1.5em", paddingTop: "20px" }}>{post.userDisplayName}</h2>
                                 </Link>
@@ -326,7 +247,7 @@ class Feed extends Component {
         }
 
         if (post.type === "image") {
-            return <img src={post.imageUrl} style={imgStyle} onClick={this.enlargeImage} />;
+            return <img src={post.imageUrl} className="imgPost" onClick={this.enlargeImage} />;
         }
 
         return this.processVideoUrl(post.videoUrl);
@@ -339,9 +260,6 @@ class Feed extends Component {
             enlargedImg: img,
             visibility: ""
         });
-
-
-        // let()
     }
 
     renderPosts() {
@@ -499,12 +417,11 @@ class Feed extends Component {
                         onChange={this.handlePageChange}
                     /> */}
                     {this.renderPosts()}
-                    <input type="button" className="feedUpdateButton btn btn-info btn-lg" name="createPost" value="+" onClick={this.openModal} style={createButtonStyle} />
+                    <input type="button" className=" createButtonStyle feedUpdateButton btn btn-info btn-lg" name="createPost" value="+" onClick={this.openModal}/>
                     <input className="btn btn-info btn-lg" value="Go Top" type="button" onClick={this.backToTop} style={{
                         visibility: this.state.visibility, borderRadius: "35px", position: "fixed", bottom: "25px"
                     }} />
                 </div>
-
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}
@@ -517,29 +434,25 @@ class Feed extends Component {
                     <div className="row">
                         <div className="col-2">
                         </div>
-                        <div className="col" style={modalCardStyle} >
+                        <div className="col modalCard" >
                             <form>
                                 <div className="row">
                                     <div className="col-12">
-                                        <input type="button" value="Close" onClick={this.closeModal} className="updateProfileCloseButton btn btn-success btn-lg" style={closeButtonStyle} />
+                                        <input type="button" value="Close" onClick={this.closeModal} className=" updateProfileButton btn btn-success btn-lg"/>
                                     </div>
                                 </div>
-
                                 <div className="row mx-auto" >
                                     <Redirect from="/feed" to="feed/text" />
                                     <div className="col-12 col-md-4 col-lg-4">
-                                        <Link to="/feed/text"><button className="btn  btn-primary feedModalButton " style={formStyle}>Text Post</button></Link>
+                                        <Link to="/feed/text"><button className="btn  btn-primary feedModalButton formStyle" >Text Post</button></Link>
                                     </div>
-
                                     <div className="col-12 col-md-4 col-lg-4">
-                                        <Link to="/feed/image"><button className="btn  btn-primary feedModalButton " style={formStyle}>Image Post</button></Link>
+                                        <Link to="/feed/image"><button className="btn  btn-primary feedModalButton formStyle">Image Post</button></Link>
                                     </div>
-
                                     <div className="col-12 col-md-4 col-lg-4">
-                                        <Link to="/feed/video"><button className="btn  btn-primary feedModalButton " style={formStyle}>Video Post</button></Link>
+                                        <Link to="/feed/video"><button className="btn  btn-primary feedModalButton formStyle">Video Post</button></Link>
                                     </div>
                                 </div>
-
                                 <Switch>
                                     <Route
                                         path="/feed/text"

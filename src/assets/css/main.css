@@ -133,3 +133,61 @@ html {
     display: inline-block;
 }
 
+.dropdown-menu {
+    cursor: pointer;
+}
+
+.videoPost {
+        padding: 10px;
+        border: 1px solid rgba(178,215,251,0.2);
+        box-shadow: -12px 11px 34px -1px rgba(44,62,80,0.34);
+}
+
+.imgPost {
+        border-radius: 50px;
+        width: 80%;
+        margin: 10px auto;
+        padding: 10px;
+        border: 1px solid rgba(178,215,251,0.2);
+        box-shadow: -12px 11px 34px -1px rgba(44,62,80,0.34);
+}
+
+.modalCard {
+        background-color: rgba(116, 162, 208, 0.3);
+        padding: 30px;
+        margin: 50px 0;
+        border-radius: 10px 10px 10px 10px;
+        position: relative;
+}
+
+.updateProfileButton {
+        transition: width 0.5s;
+        transition-timing-function: linear;
+}
+
+.cardStyle {
+        text-align: center;
+        border-radius: 2em;
+        background-color: rgba(116, 162, 208, 0.2);
+        box-shadow: -12px 11px 34px -1px rgba(44,62,80,0.34);
+}
+
+.formStyle {
+        font-weight: bold;
+        padding: 5px;
+        border-radius: 5px;
+        width: 90%;
+        height: 50px;
+        text-align: center;
+        margin: 10px;
+        color: rgba(255, 255, 255, 0.9);
+}
+.createButtonStyle{
+    transition: width 0.5s;
+    transition-timing-function: linear;
+    border-radius: 35px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    height: 70px;
+}
