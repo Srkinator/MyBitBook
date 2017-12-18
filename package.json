@@ -2,20 +2,25 @@
   "name": "mybitbook",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://srkinator.github.io/MyBitBook/",
   "dependencies": {
+    "axios": "^0.17.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.0.17",
-    "axios": "^0.17.1",
     "react-infinite-scroll-component": "^2.5.0",
     "react-js-pagination": "^3.0.0",
     "react-modal": "^3.1.3",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17"
   },
   "scripts": {
+    "deploy" : "yarn run build&&gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
   }
 }
