@@ -202,7 +202,7 @@ class Feed extends Component {
 
     closeModal() {
         this.setState({ modalIsOpen: false });
-        this.redirect.redirect("feed");
+        this.redirect.redirect("MyBitBook/#feed");
     }
 
     afterPostAction(post, postTypeName) {
@@ -526,7 +526,7 @@ class Feed extends Component {
                                 </div>
 
                                 <div className="row mx-auto" >
-                                    <Redirect from="/feed" to="/feed/text" />
+                                    <Redirect from="/feed" to="feed/text" />
                                     <div className="col-12 col-md-4 col-lg-4">
                                         <Link to="/feed/text"><button className="btn  btn-primary feedModalButton " style={formStyle}>Text Post</button></Link>
                                     </div>
