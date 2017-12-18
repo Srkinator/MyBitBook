@@ -4,14 +4,6 @@ import AuthenticationService from "../../services/authenticationService";
 import ValidationService from "../../services/validationService";
 import RedirectionService from "../../services/redirectionService";
 
-const registerButton = {
-    borderRadius: "5px",
-    transition: "width 0.5s",
-    transitionTimingFunction: "linear",
-    margin: "5px",
-    float: "right"
-};
-
 class Register extends React.Component {
     constructor(props) {
         super(props);
@@ -128,7 +120,7 @@ class Register extends React.Component {
                     <br />
                     <input type="password" id="repeatedPass" onChange={this.passwordConfirmedHandler} value={this.state.confirmedPassword} placeholder="Min 6 characters" style={{ marginBottom: "15px", width: "100%" }} className="form-control form-control-lg"/>
                     <br />
-                    <button className={`btn btn-primary btn-lg entryPageButton ${clName}`} id="registerButton" onClick={this.allRegisterData} style={registerButton}>Register</button>
+                    <button className={`btn btn-primary btn-lg entryPageButton ${clName}`} id="registerButton" onClick={this.allRegisterData}>Register</button>
                     <p>{this.state.isThereError ? this.state.error : ""}</p>
                 </form>
             </div>

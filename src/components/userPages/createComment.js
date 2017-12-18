@@ -4,11 +4,6 @@ import { Route, Redirect } from "react-router-dom";
 import DataService from "../../services/dataService";
 import RedirectionService from "../../services/redirectionService";
 
-const commentStyle = {
-    width: "90%",
-    margin: "20px auto"
-};
-
 class CreateComment extends Component {
     constructor(props) {
         super(props);
@@ -17,12 +12,10 @@ class CreateComment extends Component {
             comment: ""
         };
 
-
         this.dataService = new DataService();
         this.redirectionService = new RedirectionService();
 
         this.bindInit();
-
     }
 
     bindInit() {
@@ -59,7 +52,7 @@ class CreateComment extends Component {
     render() {
         return (
             <div>
-                <textarea onChange={this.collectCommentContent} value={this.state.comment} rows="3" cols="100" placeholder="Enter your comment here" className="form-control" style={commentStyle}></textarea>
+                <textarea onChange={this.collectCommentContent} value={this.state.comment} rows="3" cols="100" placeholder="Enter your comment here" className="form-control commentStyle"></textarea>
                 <input type="button" value="Submit" onClick={this.postComment} className="btn btn-info btn-lg" />
             </div>
         );

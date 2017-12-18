@@ -87,7 +87,7 @@ class TextPost extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <input type="button" value="Post" className="updateProfileUpdateButton btn btn-info btn-lg" style={updateButtonStyle} name="imagePost" onClick={this.createImagePost} />
+                    <input type="button" value="Post" className="updateProfileUpdateButton btn btn-info btn-lg" name="imagePost" onClick={this.createImagePost} />
                 </div>
             </div>
         );

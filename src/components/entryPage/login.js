@@ -4,15 +4,6 @@ import { Link } from "react-router-dom";
 import AuthenticationService from "../../services/authenticationService";
 import Feed from "../userPages/feed";
 
-const loginButton = {
-    borderRadius: "5px",
-    position: "absolute", 
-    right: "35px", 
-    bottom: "30px" ,
-    transition: "width 0.5s",
-    transitionTimingFunction: "linear"
-};
-
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -120,7 +111,7 @@ class Login extends React.Component {
                     <br />
                     <input type="password" id="loginPass" onChange={this.getPassInput} onKeyPress={this.handleKeyPress} value={this.state.passInput} placeholder="Password" className="form-control form-control-lg"  style={{ marginBottom: "15px", width: "100%" }} />
                     <br />
-                    <button className={`btn btn-primary btn-lg entryPageButton ${clName}`} id="loginButton" style={loginButton}>Login</button>
+                    <button className={`btn btn-primary btn-lg entryPageButton ${clName}`} id="loginButton">Login</button>
                     <p id="error"> {this.state.isThereError ? this.state.errorMessage : ""}</p>
                     <p>{this.state.isThereRealError ? this.state.error : ""}</p>
                 </form>

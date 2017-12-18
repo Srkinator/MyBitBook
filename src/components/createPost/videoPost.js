@@ -1,11 +1,5 @@
 import React, { Component } from "react";
 
-const updateButtonStyle = {
-    transition: "width 0.5s",
-    transitionTimingFunction: "linear"
-};
-
-
 class VideoPost extends Component {
     constructor(props) {
         super(props);
@@ -45,7 +39,7 @@ class VideoPost extends Component {
         return (
             <div>
                 <input type="text" placeholder="Please enter youtube video url" onChange={this.getVideoPost} className="updateProfileForm form-control" required />
-                <input type="button" value="Post" className="updateProfileUpdateButton btn btn-info btn-lg" name="videoPost" onClick={this.createVideoPost} style={updateButtonStyle} />
+                <input type="button" value="Post" className="updateProfileUpdateButton btn btn-info btn-lg" name="videoPost" onClick={this.createVideoPost}/>
                 <p>{this.state.isThereError ? `Error ${this.state.error}: Please enter the text of your post` : ""}</p>
             </div>
         );
