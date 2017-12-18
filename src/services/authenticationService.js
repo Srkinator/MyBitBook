@@ -21,7 +21,7 @@ class AuthenticationService {
     login(userData, handleError) {
         this.commService.postRequest("login", userData, (data) => {
             this.storeSession(data.data.sessionId);
-            this.redirect.redirect("feed");
+            this.redirect.redirect("MyBitBook/#feed");
         }, (error) =>{
             handleError(error);
         });
