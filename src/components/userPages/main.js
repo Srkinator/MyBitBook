@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 
 import Header from "../common/header";
 import UserProfile from "./profilePage";
@@ -8,9 +8,6 @@ import Feed from "./feed";
 import SinglePostInfo from "./singlePostInfo";
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <div>

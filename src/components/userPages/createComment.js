@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
 
 import DataService from "../../services/dataService";
 import RedirectionService from "../../services/redirectionService";
@@ -28,8 +27,6 @@ class CreateComment extends Component {
             body: this.state.comment,
             postId: this.props.postId
         };
-
-        const currentUrl = this.props.currentUrl.slice(1);
 
         this.dataService.postComment(body, (response) => {
             this.setState({

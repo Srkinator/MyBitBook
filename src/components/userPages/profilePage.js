@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
 
@@ -224,7 +223,7 @@ class UserProfile extends Component {
                 <div className="row">
                     <div className="mx-auto col-6">
                         <div className="card profilePageCard">
-                            <img src={this.state.avatar} className="card-img-top profilePageImg"/>
+                            <img alt="Profile Page" src={this.state.avatar} className="card-img-top profilePageImg"/>
                             <div className="card-block">
                                 <h2 className="card-title profileName ">{this.state.name}</h2>
                                 <p className="card-text">{this.state.aboutShort}</p>

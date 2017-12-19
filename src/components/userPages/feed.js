@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Modal from "react-modal";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Pagination from "react-js-pagination";
+// import Pagination from "react-js-pagination";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import DataService from "../../services/dataService";
@@ -11,7 +11,6 @@ import CommunicationService from "../../services/communicationService";
 import TextPost from "../createPost/textPost";
 import ImagePost from "../createPost/imagePost";
 import VideoPost from "../createPost/videoPost";
-import SinglePostInfo from "../userPages/singlePostInfo";
 import { POSTS_PER_PAGE } from "../../constants";
 import EnlargeImage from "../userPages/enlargeImage";
 import Search from "../common/search";
@@ -151,7 +150,7 @@ class Feed extends Component {
     processVideoUrl(video) {
         const videoEndPart = video.split("=")[1];
         return (
-            <iframe width="90%" height="550px" className="videoPost" src={`https://www.youtube.com/embed/${videoEndPart}`} frameBorder="0" allowFullScreen></iframe>
+            <iframe title="video post" width="90%" height="550px" className="videoPost" src={`https://www.youtube.com/embed/${videoEndPart}`} frameBorder="0" allowFullScreen></iframe>
         );
     }
 
@@ -247,7 +246,7 @@ class Feed extends Component {
         }
 
         if (post.type === "image") {
-            return <img src={post.imageUrl} className="imgPost" onClick={this.enlargeImage} />;
+            return <img alt="" src={post.imageUrl} className="imgPost" onClick={this.enlargeImage} />;
         }
 
         return this.processVideoUrl(post.videoUrl);
@@ -295,7 +294,7 @@ class Feed extends Component {
             console.log(error);
         });
 
-        if (this.state.posts.length == this.state.totalPostsCount) {
+        if (this.state.posts.length === this.state.totalPostsCount) {
             this.setState({
                 hasMore: false
             });

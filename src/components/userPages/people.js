@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import DataService from "../../services/dataService";
@@ -79,7 +78,7 @@ class People extends Component {
                         return (
                             <div className="col-sm-12 col-md-6 col-lg-4 col-xl-4" key={user.id} >
                                 <div className="card peoplePageCard">
-                                    <img className="card-img-top userImg" src={this.getImg(user.avatarUrl)} alt="Card image cap" />
+                                    <img className="card-img-top userImg" src={this.getImg(user.avatarUrl)} alt="People " />
                                     <div className="card-body ">
                                         <Link to={`profile/${user.id}`} className="peopleCardBody">
                                             <h4 className="card-title">{user.name}</h4>

@@ -39,7 +39,7 @@ class RenderPost extends Component {
     processVideoUrl(video) {
         const videoEndPart = video.split("=")[1];
         return (
-            <iframe width="90%" height="550px" className="videoPostStyle" src={`https://www.youtube.com/embed/${videoEndPart}`} frameBorder="0" allowFullScreen></iframe>
+            <iframe title="video post" width="90%" height="550px" className="videoPostStyle" src={`https://www.youtube.com/embed/${videoEndPart}`} frameBorder="0" allowFullScreen></iframe>
         );
     }
     render() {
@@ -48,7 +48,7 @@ class RenderPost extends Component {
             <div>
                 <h1 className="card-title profileName">{singlePost.userDisplayName}</h1>
                 <p>{new Date(singlePost.dateCreated).toLocaleDateString()} at {new Date(singlePost.dateCreated).toLocaleTimeString()}</p>
-                <p>{singlePost.text ? <p>{singlePost.text}</p> : singlePost.imageUrl ? <img src={singlePost.imageUrl} className="renderImgStyle"/> : singlePost.videoUrl ? this.processVideoUrl(singlePost.videoUrl) : "no content detected"}</p>
+                <p>{singlePost.text ? <p>{singlePost.text}</p> : singlePost.imageUrl ? <img alt="" src={singlePost.imageUrl} className="renderImgStyle"/> : singlePost.videoUrl ? this.processVideoUrl(singlePost.videoUrl) : "no content detected"}</p>
                 {this.renderDeleteButton()}
             </div>
         );

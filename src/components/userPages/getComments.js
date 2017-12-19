@@ -2,11 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class GetComments extends Component {
-    constructor(props) {
-        super(props);
-
-    }
-
     render() {
         const comments = this.props.comments;
         return (

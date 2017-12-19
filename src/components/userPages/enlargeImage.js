@@ -27,7 +27,7 @@ class EnlargeImage extends Component {
                 <div onClick ={this.closeImg} id="imgEnlarger" className="col-12 " style={{ visibility: isItVisible, position: "fixed", top: 0, bottom: 0, left: 0, right: 0,  zIndex: "10", backgroundColor: "rgba(0,0,0,0.5)" }}>
                     <div style={{ display: "table", width:"100%", height:"100%"}}>
                         <div  style={{display:"table-cell" , textAlign:"center", verticalAlign:"middle"}}>
-                            <img onClick={event => event.preventDefault()} src={this.props.imgSrc} width="70%"/>
+                            <img alt="enlarge"onClick={event => event.preventDefault()} src={this.props.imgSrc} width="70%"/>
                         </div>
                     </div>
                 </div>

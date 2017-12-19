@@ -3,11 +3,6 @@ import React, { Component } from "react";
 import DataService from "../../services/dataService";
 import RedirectionService from "../../services/redirectionService";
 
-const updateButtonStyle = {
-    transition: "width 0.5s",
-    transitionTimingFunction: "linear"
-};
-
 class TextPost extends Component {
     constructor(props) {
         super(props);
