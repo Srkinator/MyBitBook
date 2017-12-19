@@ -90,7 +90,7 @@ class Register extends React.Component {
                     error: error.response.status + " " + error.response.data.error.message
                 });
             });
-            this.redirection.redirect("");
+            this.redirection.redirect("login");
         }
     }
         

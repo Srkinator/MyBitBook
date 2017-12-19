@@ -169,7 +169,7 @@ class Feed extends Component {
                                     <h4 style={{ fontSize: "1.5em" }}>{new Date(post.dateCreated).toLocaleDateString()} at {new Date(post.dateCreated).toLocaleTimeString()}</h4>
                                     <p style={{ fontSize: "1em"}}>{post.type} post</p>
                                 </Link>
-                                <button className="btn btn-success btn-lg profileButton">Comments Number : {post.commentsNum}</button>
+                                <button className="btn btn-success btn-lg commentsNum">Comments Number : {post.commentsNum}</button>
                             </div>
                         </div>
                     );
