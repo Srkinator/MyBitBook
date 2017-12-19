@@ -1,5 +1,3 @@
-import React from "react";
-
 export default class ValidationService {
 
     validateEverything(data) {
@@ -19,7 +17,7 @@ export default class ValidationService {
             if (!this.validateConfirmPassword(data.password, data.confirmedPassword)) {
                 return;
             }
-
+            
             return true;
         }
     }

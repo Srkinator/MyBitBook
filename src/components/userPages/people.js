@@ -6,26 +6,6 @@ import DataService from "../../services/dataService";
 import RedirectionService from "../../services/redirectionService";
 import Search from "../common/search";
 
-const imgStyle = {
-    borderRadius: "50px",
-    width: "60%",
-    margin: "10px auto",
-    padding: "10px",
-    border: "1px solid rgba(178,215,251,0.2)",
-    boxShadow: "-12px 11px 34px -1px rgba(44,62,80,0.34)"
-};
-
-const cardStyle = {
-    width: "95%",
-    height: "95%",
-    padding: "20px",
-    margin: "10px",
-    textAlign: "center",
-    borderRadius: "10%",
-    backgroundColor: "rgba(116, 162, 208, 0.2)",
-    boxShadow: "-12px 11px 34px -1px rgba(44,62,80,0.34)"
-};
-
 class People extends Component {
     constructor(props) {
         super(props);
@@ -49,24 +29,6 @@ class People extends Component {
     }
 
     componentDidMount() {
-
-        // Fetching users from localstorage if it exist, do not use network
-
-        // if(localStorage.getItem("users")) {
-        //     const users = JSON.parse(localStorage.getItem("users"));
-        //     console.log(users);
-
-        //     this.setState({
-        //         users,
-        //         matchedUsers: users
-        //     });
-        //     return ;
-        // }
-        // let toggler = false;
-        // if (localStorage.getItem("users")) {
-        //     toggler = true;
-        // }
-
         this.getData.getUsersData((users) => {
             this.setState({
                 users,
@@ -116,8 +78,8 @@ class People extends Component {
                     {this.state.matchedUsers.map((user) => {
                         return (
                             <div className="col-sm-12 col-md-6 col-lg-4 col-xl-4" key={user.id} >
-                                <div className="card" style={cardStyle}>
-                                    <img className="card-img-top userImg" style={imgStyle} src={this.getImg(user.avatarUrl)} alt="Card image cap" />
+                                <div className="card peoplePageCard">
+                                    <img className="card-img-top userImg" src={this.getImg(user.avatarUrl)} alt="Card image cap" />
                                     <div className="card-body ">
                                         <Link to={`profile/${user.id}`} className="peopleCardBody">
                                             <h4 className="card-title">{user.name}</h4>

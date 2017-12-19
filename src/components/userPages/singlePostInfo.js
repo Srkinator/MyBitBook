@@ -7,21 +7,9 @@ import CreateComment from "../userPages/createComment";
 import GetComments from "../userPages/getComments";
 import RenderPost from "../userPages/renderPost";
 
-
-const cardStyle = {
-    textAlign: "center",
-    borderRadius: "2em",
-    backgroundColor: "rgba(116, 162, 208, 0.2)",
-    boxShadow: "-12px 11px 34px -1px rgba(44,62,80,0.34)",
-    marginTop: "50px",
-    padding: "40px 0"
-
-};
-
 class SinglePostInfo extends Component {
     constructor(props) {
         super(props);
-
 
         this.state = {
             error: false,
@@ -34,10 +22,8 @@ class SinglePostInfo extends Component {
             didCommentArrive: false
         };
 
-
         this.redirectService = new RedirectionService();
         this.DataService = new DataService();
-
 
         this.bindInit();
     }
@@ -108,7 +94,7 @@ class SinglePostInfo extends Component {
             <div className="container">
                 <div className="row">
                     <div className="mx-auto col-12">
-                        <div className="card " style={cardStyle}>
+                        <div className="card singlePostInfoCard">
                             <div>
                                 <RenderPost singlePost={this.state.singlePostInfo} isMyPost={this.isMyPost} postId={this.state.postId} />
                                 <GetComments comments={this.state.comments} />

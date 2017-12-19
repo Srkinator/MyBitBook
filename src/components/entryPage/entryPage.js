@@ -7,9 +7,6 @@ import Register from "./register";
 import Welcome from "./welcome";
 
 class EntryPage extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (

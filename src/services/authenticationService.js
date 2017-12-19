@@ -1,7 +1,6 @@
 import CommunicationService from "./communicationService";
 import RedirectionService from "./redirectionService";
 
-
 class AuthenticationService {
     constructor() {
 

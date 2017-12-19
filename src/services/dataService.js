@@ -18,7 +18,6 @@ class DataService {
 
     getSingleUserData(datahandler, userId, errorHandler) {
         this.communication.getRequest(`users/${userId}`, (response) => {
-            const profile = new Profile(response.data);
             datahandler(response);
         }, (error) => {
             if (!errorHandler) {
