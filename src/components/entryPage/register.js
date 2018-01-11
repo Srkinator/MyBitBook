@@ -87,10 +87,10 @@ class Register extends React.Component {
             this.authentication.register(userData, (error) => {
                 this.setState({
                     isThereError: true,
-                    error: error.response.status + " " + error.response.data.error.message
+                    error: error
                 });
             });
-            this.redirection.redirect("login");
+            this.redirection.redirect("#login");
         }
     }
         
